@@ -8,7 +8,6 @@ const upload = multer({
     storage: multerS3({
         s3: s3Client,
         bucket: process.env.AWS_BUCKET_NAME || 'campusvault-storage',
-        acl: 'public-read', // If using ACLs, otherwise use bucket policies
         metadata: function (req, file, cb) {
             cb(null, { fieldName: file.fieldname });
         },

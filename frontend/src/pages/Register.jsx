@@ -19,7 +19,7 @@ const Register = () => {
         setLoading(true);
         try {
             // Defaults to Student role based on backend
-            await axios.post('http://localhost:5000/api/auth/register', { name, email, password, role: 'Student' });
+            await axios.post('/api/auth/register', { name, email, password, role: 'Student' });
             navigate('/login');
         } catch (err) {
             setError(err.response?.data?.message || 'Registration failed. Please try again.');
