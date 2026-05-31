@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-sans antialiased bg-background text-text transition-colors duration-300;
+  }
+  
+  .dark body {
+    @apply bg-dark-background text-dark-text;
+  }
+}
+
+/* Glassmorphism utility */
+.glass {
+  @apply bg-white bg-opacity-20 backdrop-blur-lg border border-white border-opacity-30 shadow-lg;
+}
+.dark .glass {
+  @apply bg-gray-900 bg-opacity-40 border-gray-700 shadow-xl;
+}
