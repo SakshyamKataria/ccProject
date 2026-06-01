@@ -18,6 +18,7 @@ const Sidebar = () => {
         { name: 'Admin Dashboard', path: '/admin', icon: <LayoutDashboard size={20} /> },
         { name: 'Manage Users', path: '/admin/users', icon: <Users size={20} /> },
         { name: 'Manage Files', path: '/admin/files', icon: <File size={20} /> },
+        { name: 'Upload Files', path: '/upload', icon: <UploadCloud size={20} /> },
     ];
 
     const links = user?.role === 'Admin' ? adminLinks : studentLinks;
