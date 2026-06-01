@@ -18,7 +18,7 @@ const Upload = () => {
     useEffect(() => {
         const fetchCategories = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/files/categories');
+                const res = await axios.get('/api/files/categories');
                 setCategories(res.data);
                 if (res.data.length > 0) setCategoryId(res.data[0].id);
             } catch (error) {
@@ -45,7 +45,7 @@ const Upload = () => {
         setStatus(null);
 
         try {
-            await axios.post('http://localhost:5000/api/files/upload', formData, {
+            await axios.post('/api/files/upload', formData, {
                 headers: { 
                     'Content-Type': 'multipart/form-data',
                     Authorization: `Bearer ${token}` 

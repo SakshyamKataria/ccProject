@@ -16,7 +16,7 @@ const Projects = () => {
 
     const fetchFiles = async () => {
         try {
-            const res = await axios.get(`http://localhost:5000/api/files?category=Projects&search=${search}`, {
+            const res = await axios.get(`/api/files?category=Projects&search=${search}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setFiles(res.data);
@@ -30,7 +30,7 @@ const Projects = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure you want to delete this file?")) return;
         try {
-            await axios.delete(`http://localhost:5000/api/files/${id}`, {
+            await axios.delete(`/api/files/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             fetchFiles();

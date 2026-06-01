@@ -12,7 +12,7 @@ const Dashboard = () => {
     useEffect(() => {
         const fetchFiles = async () => {
             try {
-                const res = await axios.get('http://localhost:5000/api/files', {
+                const res = await axios.get('/api/files', {
                     headers: { Authorization: `Bearer ${token}` }
                 });
                 setFiles(res.data);

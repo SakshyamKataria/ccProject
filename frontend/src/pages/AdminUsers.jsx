@@ -14,7 +14,7 @@ const AdminUsers = () => {
 
     const fetchUsers = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/auth/users', {
+            const res = await axios.get('/api/auth/users', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setUsersList(res.data);

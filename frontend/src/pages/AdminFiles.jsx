@@ -14,7 +14,7 @@ const AdminFiles = () => {
 
     const fetchFiles = async () => {
         try {
-            const res = await axios.get('http://localhost:5000/api/files', {
+            const res = await axios.get('/api/files', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setFiles(res.data);
@@ -28,7 +28,7 @@ const AdminFiles = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure you want to completely remove this file from AWS S3? This action cannot be undone.")) return;
         try {
-            await axios.delete(`http://localhost:5000/api/files/${id}`, {
+            await axios.delete(`/api/files/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             fetchFiles();

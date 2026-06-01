@@ -18,7 +18,7 @@ const Documents = () => {
         try {
             // Using a comma separated approach if we were to support multiple categories, but for now we fetch 'Documents'
             // To be comprehensive, we could fetch all and filter, or just fetch 'Documents'. Let's fetch 'Documents'.
-            const res = await axios.get(`http://localhost:5000/api/files?category=Documents&search=${search}`, {
+            const res = await axios.get(`/api/files?category=Documents&search=${search}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setFiles(res.data);
@@ -32,7 +32,7 @@ const Documents = () => {
     const handleDelete = async (id) => {
         if (!window.confirm("Are you sure you want to delete this file?")) return;
         try {
-            await axios.delete(`http://localhost:5000/api/files/${id}`, {
+            await axios.delete(`/api/files/${id}`, {
                 headers: { Authorization: `Bearer ${token}` }
             });
             fetchFiles();
