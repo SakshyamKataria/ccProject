@@ -13,11 +13,7 @@ import Documents from './pages/Documents';
 import AdminUsers from './pages/AdminUsers';
 import AdminFiles from './pages/AdminFiles';
 import { AuthProvider, AuthContext } from './context/AuthContext';
-    <div className="flex flex-col items-center justify-center h-full">
-        <h1 className="text-4xl font-bold mb-4">{title}</h1>
-        <p className="text-gray-500">This page is under construction.</p>
-    </div>
-);
+
 
 const ProtectedRoute = ({ children, allowedRole }) => {
     const { user, loading } = useContext(AuthContext);
