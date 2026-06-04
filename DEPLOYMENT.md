@@ -71,6 +71,9 @@ server {
     listen 80;
     server_name <YOUR_DOMAIN_OR_IP>;
 
+    # Allow file uploads up to 50MB (Matches Node.js multer limits)
+    client_max_body_size 50M;
+
     root /var/www/html;
     index index.html index.htm;
 
